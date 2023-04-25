@@ -8,8 +8,6 @@ class ChildComponent extends React.Component {
     */
     // key:value - object
     state = {
-        firstname: '',
-        lastname: ''
     }
 
     handleChangeFirstName = (event) => {
@@ -30,14 +28,25 @@ class ChildComponent extends React.Component {
     }
 
     render() {
-        console.log(this.props);
+        console.log(this.props.arrJobs);
         // let name = this.props.name;
         // let age = this.props.age;
-        let { name, age } = this.props;
+        let { name, age, address, arrJobs } = this.props;
 
         return (
             <>
-                <div>Child Component: {name} - {age}</div>
+                {/* <div>Child Component: {name} - {age} - {address}</div> */}
+                <div className="job-lists">
+                    {
+                        arrJobs.map((item, index) => {
+                            return (
+                                <div key={item.id}>
+                                    {item.title} - {item.salary}
+                                </div>
+                            )
+                        })
+                    }
+                </div>
             </>
         )
     }
