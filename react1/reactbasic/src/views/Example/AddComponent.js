@@ -31,10 +31,14 @@ class AddComponent extends React.Component {
             title: this.state.title,
             salary: this.state.salary
         })
-        this.setState({
-            title: '',
-            salary: ''
-        })
+        // this.props.update({
+        //     title: this.state.title,
+        //     salary: this.state.salary
+        // })
+        // this.setState({
+        //     title: '',
+        //     salary: ''
+        // })
     }
 
 

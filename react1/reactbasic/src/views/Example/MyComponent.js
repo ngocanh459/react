@@ -31,6 +31,27 @@ class MyComponent extends React.Component {
         })
     }
 
+    updateJob = (job) => {
+        let newJob = this.update(job)
+        this.setState({
+            arrJobs: [this.state.arrJobs, newJob]
+        })
+
+    }
+
+    update = (job) => {
+        this.setState({
+            arrJobs: [...this.state.arrJobs, job]
+        })
+    }
+
+    componentDidMount() {
+        console.log("run componentdistmount");
+    }
+    componentDidUpdate(prevProps, prevState) {
+        console.log("run componentdicupdate: ", prevState, "abc: ", this.state);
+    }
+
     render() {
         console.log(this.state);
         return (

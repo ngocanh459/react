@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.scss';
-import MyComponent from './Example/MyComponent';
+// import MyComponent from './Example/MyComponent';
+import ListTodo from './Todos/ListTodo';
 /**
  *  2 component: class component vs 
  *  JSX: code html trong js
@@ -11,10 +12,11 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          Simple TodoApp with Hoidanit
         </p>
 
-        <MyComponent />
+        {/* <MyComponent /> */}
+        <ListTodo />
       </header>
     </div>
   );
