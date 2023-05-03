@@ -1,4 +1,5 @@
 import React from "react";
+import { toast } from "react-toastify";
 
 class AddTodo extends React.Component {
 
@@ -13,11 +14,20 @@ class AddTodo extends React.Component {
     }
 
     handleAddTodo = () => {
+        if (!this.state.title) {
+            // undefined/null/empty = !this.state.title
+            // alert("Missing title")
+            toast.error("Missing title!")
+            return
+        }
         let todo = {
             id: Math.floor(Math.random() * 1001),
             title: this.state.title
         }
         this.props.addNewTodo(todo)
+        this.setState({
+            title: ''
+        })
     }
 
     render() {

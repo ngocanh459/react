@@ -1,6 +1,9 @@
 import React from "react";
 import "./listTodo.scss"
 import AddTodo from "./AddTodo";
+import 'react-toastify/dist/ReactToastify.css'
+import { toast } from 'react-toastify';
+
 
 
 class ListTodo extends React.Component {
@@ -18,6 +21,7 @@ class ListTodo extends React.Component {
         this.setState({
             listTodos: [...this.state.listTodos, todo]
         })
+        toast.success("Them moi thanh cong!")
     }
 
     render() {
