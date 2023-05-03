@@ -48,6 +48,7 @@ class ListTodo extends React.Component {
                 listTodos: listTodosCopy,
                 editTodo: {}
             })
+            toast.info("Update thanh cong!")
             return
         }
         // update
