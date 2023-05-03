@@ -1,5 +1,6 @@
 import React from "react";
 import "./listTodo.scss"
+import AddTodo from "./AddTodo";
 
 
 class ListTodo extends React.Component {
@@ -13,16 +14,21 @@ class ListTodo extends React.Component {
         ]
     }
 
+    addNewTodo = (todo) => {
+        this.setState({
+            listTodos: [...this.state.listTodos, todo]
+        })
+    }
+
     render() {
 
         let { listTodos } = this.state
 
         return (
             <div className="list-todo-container">
-                <div className="add-todo">
-                    <input type="text" />
-                    <button type="button" className="add">Add</button>
-                </div>
+                <AddTodo
+                    addNewTodo={this.addNewTodo}
+                />
                 <div className="list-todo-content">
                     {listTodos && listTodos.length > 0 &&
                         listTodos.map((item, index) => {
